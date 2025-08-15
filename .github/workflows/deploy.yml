@@ -23,21 +23,21 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ./creative-leadership-bootcamp
+       
 
       - name: Build website
         run: npm run build
-        working-directory: ./creative-leadership-bootcamp
+        
 
       - name: Copy SPA fallback
         run: cp dist/index.html dist/404.html
-        working-directory: ./creative-leadership-bootcamp
+      
 
       # Upload the built site for deployment
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: creative-leadership-bootcamp/dist
+          path: ./dist
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
