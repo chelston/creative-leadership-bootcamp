@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand tokens */
+:root {
+  --brand-purple: #6b21a8;
+  --brand-pink: #c026d3;
+  --gradient: linear-gradient(135deg, var(--brand-purple), var(--brand-pink));
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient background utility */
+.gradient-bg {
+  background: var(--gradient);
+}
+
+/* Hover lift utility for cards and buttons */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px -12px rgba(0, 0, 0, 0.15);
+}
+
+/* Creative border utility used for panels */
+.creative-border {
+  border: 2px solid transparent;
+  background: linear-gradient(#fff, #fff) padding-box,
+    var(--gradient) border-box;
+}
+
+/* Glass blur background utility */
+.blur-bg {
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Aspect ratio helper for videos */
+.aspect-video {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.aspect-video > * {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
